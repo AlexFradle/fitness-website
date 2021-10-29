@@ -1,0 +1,10 @@
+{
+    "untrained": "#673AB7",
+    "novice": "#3F51B5",
+    "intermediate": "#009688",
+    "proficient": "#4CAF50",
+    "advanced": "#CDDC39",
+    "exceptional": "#FFC107",
+    "elite": "#FF5722",
+    "world class": "#F44336"
+}

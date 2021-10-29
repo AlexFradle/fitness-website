@@ -1,0 +1,6 @@
+.menu {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    place-content: center space-around;
+}
