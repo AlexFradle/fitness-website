@@ -6,7 +6,8 @@ import fitnessData from "../fitness.json";
 import coeffs from "../coefficients.json";
 import colours from "../colours.json";
 import {linearRegression} from "simple-statistics";
-import "./LineGraph.css"
+import Skeleton from "./Skeleton";
+import ExerciseSelect from "./ExerciseSelect"
 
 let graphData = {};
 const allExercises = [];
@@ -91,8 +92,8 @@ const LineGraph = props => {
         loadData(f);
     };
 
-    const handleExerciseSelectChange = ({target}) => {
-        setGraphData(target.value);
+    const handleExerciseSelectChange = name => {
+        setGraphData(name);
         const exerciseMap = {
             "Bench Press (Barbell)": "Bench Press",
             "Incline Bench Press (Barbell)": "Incline Bench Press",
@@ -105,8 +106,8 @@ const LineGraph = props => {
             "Overhead Press (Barbell)": "Overhead Press"
         };
 
-        if (exerciseMap[target.value] !== undefined) {
-            setAverageGraphData(exerciseMap[target.value]);
+        if (exerciseMap[name] !== undefined) {
+            setAverageGraphData(exerciseMap[name]);
         } else {
             setAverageData({
                 "untrained": 0,
@@ -242,7 +243,7 @@ const LineGraph = props => {
                 marker: { color: props.lineColor }
             }
         ];
-        if (1 === 2) {
+        if (1 === 1) {
             arr.push({
                 x: repXData,
                 y: repYData,
@@ -279,7 +280,7 @@ const LineGraph = props => {
             shapes: getShapes(),
             annotations: getAnnotations()
         };
-        if (1 === 2) {
+        if (1 === 1) {
             obj.yaxis2 = {
                 title: 'Total Reps',
                 titlefont: {color: "#009bff"},
@@ -311,13 +312,7 @@ const LineGraph = props => {
             </div>
 
             <button onClick={makeLine}>press line</button>
-            <br/>
-            <select onChange={handleExerciseSelectChange}>
-                {allExercises.map(name => {
-                    return <option value={name} key={name}>{name}</option>
-                })}
-            </select>
-            <Plot
+            <Plot className="plot"
                 data={getLineData()}
                 layout={getLayoutData()}
             />
@@ -339,6 +334,11 @@ const LineGraph = props => {
                     })}
                 </tbody>
             </table>
+            <br/>
+            <div className="exercise-and-skeleton-container">
+                <ExerciseSelect onChange={handleExerciseSelectChange} allExercises={allExercises}/>
+                <Skeleton gender={gender}/>
+            </div>
         </div>
     );
 }

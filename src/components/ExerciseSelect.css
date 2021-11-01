@@ -1,0 +1,16 @@
+.exercise-container {
+    display: flex;
+    flex-flow: column nowrap;
+    place-content: flex-start space-around;
+}
+
+.exercise-item {
+    min-width: 100px;
+    max-width: 500px;
+    margin: 10px;
+    flex-grow: 1;
+}
+
+.exercise-item:hover {
+
+}

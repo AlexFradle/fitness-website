@@ -1,3 +1,15 @@
+:root {
+  --main-bg-color: #05000A;
+  --main-text-color: white;
+  --main-accent-color: #6609C3;
+  --second-accent-color: #21033f;
+}
+
+html {
+  color: var(--main-text-color);
+  background-color: var(--main-bg-color);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +22,55 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+/* LineGraph */
+.menu {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  place-content: center space-around;
+}
+
+.plot {
+  display: block;
+}
+
+.exercise-and-skeleton-container {
+  display: flex;
+  flex-wrap: wrap;
+  place-content: flex-start space-between;
+}
+
+
+/* ExerciseSelect */
+.exercise-outside {
+  max-height: 850px;
+  max-width: 500px;
+  overflow: auto;
+}
+.exercise-container {
+  display: flex;
+  flex-flow: column nowrap;
+  place-content: flex-start space-around;
+}
+
+.exercise-item {
+  min-width: 100px;
+  max-width: 500px;
+  margin: 5px 10px;
+  flex-grow: 1;
+  border: 5px solid var(--second-accent-color);
+}
+
+.exercise-item:hover, .exercise-item.selected {
+  background-color: var(--main-accent-color);
+  cursor: pointer;
+}
+
+
+/* Skeleton */
+.skeleton-container {
+  border: 5px solid red;
 }

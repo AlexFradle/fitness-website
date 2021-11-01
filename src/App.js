@@ -1,5 +1,4 @@
 import logo from './logo.svg';
-import './App.css';
 import LineGraph from "./components/LineGraph";
 
 function App() {
@@ -10,6 +9,7 @@ function App() {
             </header>
             <main>
                 <LineGraph backgroundColor="#05000A" gridColor="#21033f" lineColor="#6609C3" fontColor="#FFF"/>
+
             </main>
         </div>
     );
